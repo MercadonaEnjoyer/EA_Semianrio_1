@@ -1,0 +1,17 @@
+fetch('https://jsonplaceholder.typicode.com/todos/')
+      .then(response => response.json())
+      .then(json => {
+            const ids = json.map((pruebaIds) => pruebaIds.id);
+            console.log(ids);
+            console.log(ids.slice(0,3));
+            const id = json.filter((complete) => complete.title === "sint amet quia totam corporis qui exercitationem commodi");
+            console.log("El titulo tiene id: " + id[0].id);
+            const lTitulos = json.reduce((titulos, data) => { 
+                  return Array.from([...titulos, data.title]);
+              }, []);
+              console.log(lTitulos.slice(0, 5));
+              
+            });
+            
+
+            
